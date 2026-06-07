@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUSAKA AROMA - Parfum Premium Heritage</title>
-    <!-- Menggunakan Font Google untuk kesan lebih elegan dan mewah -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* --- VARIABEL WARNA & RESET DASAR --- */
+        /* ==================== VARIABEL & RESET ==================== */
         :root {
-            --primary-color: #1a1a1a;      /* Hitam elegan */
-            --accent-color: #d4af37;       /* Emas (Gold) untuk kesan premium */
+            --primary-color: #1a1a1a;
+            --accent-color: #d4af37;
             --text-color: #333333;
             --bg-color: #ffffff;
             --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -39,11 +38,11 @@
             padding: 0 20px;
         }
 
-        /* --- HEADER STYLES --- */
+        /* ==================== HEADER ==================== */
         .main-header {
             background-color: var(--bg-color);
             box-shadow: var(--shadow);
-            position: sticky; /* Header tetap di atas saat di-scroll */
+            position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #eee;
@@ -56,7 +55,6 @@
             height: 85px;
         }
 
-        /* Logo */
         .logo a {
             display: flex;
             align-items: center;
@@ -64,17 +62,16 @@
         }
 
         .logo img {
-            height: 65px; 
+            height: 65px;
             width: auto;
             object-fit: contain;
             transition: transform 0.3s ease;
         }
 
         .logo a:hover img {
-            transform: scale(1.05); /* Efek zoom sedikit saat disentuh */
+            transform: scale(1.05);
         }
 
-        /* Navigation */
         .main-nav ul {
             display: flex;
             list-style: none;
@@ -92,7 +89,6 @@
             transition: color 0.3s ease;
         }
 
-        /* Garis bawah animasi saat hover */
         .main-nav a::after {
             content: '';
             position: absolute;
@@ -112,7 +108,6 @@
             width: 100%;
         }
 
-        /* Header Actions (Ikon Pencarian & Keranjang) */
         .header-actions {
             display: flex;
             align-items: center;
@@ -150,7 +145,6 @@
             justify-content: center;
         }
 
-        /* Tombol Hamburger (Hanya muncul di HP) */
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -158,7 +152,7 @@
             color: var(--primary-color);
         }
 
-        /* --- HERO SECTION (Tambahan preview konten) --- */
+        /* ==================== HERO SECTION ==================== */
         .hero {
             height: calc(100vh - 85px);
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');
@@ -207,7 +201,501 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        /* --- RESPONSIVE DESIGN (Tampilan HP) --- */
+        /* ==================== SECTION UMUM ==================== */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title h2 span {
+            color: var(--accent-color);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==================== KEUNGGULAN ==================== */
+        .features {
+            background-color: #f9f9f9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ==================== PRODUK ==================== */
+        .products {
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge.new {
+            background: #e74c3c;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .scent-notes {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .btn-add-cart {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-add-cart:hover {
+            background: var(--accent-color);
+        }
+
+        .center-btn {
+            text-align: center;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 14px 40px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* ==================== TENTANG KAMI ==================== */
+        .about {
+            background: #f9f9f9;
+        }
+
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-content h2 span {
+            color: var(--accent-color);
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* ==================== TESTIMONI ==================== */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #f9f9f9;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .stars {
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author span {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* ==================== KONTAK ==================== */
+        .contact {
+            background: #f9f9f9;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contact-info h2 span {
+            color: var(--accent-color);
+        }
+
+        .contact-info > p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
+        }
+
+        .contact-item p {
+            color: #555;
+            margin: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .main-footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-col p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--accent-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #b8941f;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* ==================== WHATSAPP FLOATING ==================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 900px) {
             .main-nav {
                 position: fixed;
@@ -240,7 +728,7 @@
             }
 
             .menu-toggle {
-                display: block; /* Tampilkan ikon hamburger di HP */
+                display: block;
             }
             
             .logo img {
@@ -250,27 +738,43 @@
             .hero-content h1 {
                 font-size: 2.5rem;
             }
+            
             .hero-content p {
                 font-size: 1rem;
                 padding: 0 20px;
+            }
+
+            .about-wrapper,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .about-stats {
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============ HEADER ============ -->
+    <!-- ==================== HEADER ==================== -->
     <header class="main-header">
         <div class="container header-wrapper">
-            
-            <!-- Logo -->
             <div class="logo">
                 <a href="#">
                     <img src="https://i.ibb.co.com/Kcq4MS3s/pusaka-parfum.png" alt="PUSAKA AROMA Logo">
                 </a>
             </div>
             
-            <!-- Menu Navigasi -->
             <nav class="main-nav">
                 <ul>
                     <li><a href="#home">Beranda</a></li>
@@ -281,7 +785,6 @@
                 </ul>
             </nav>
 
-            <!-- Aksi Header (Pencarian, Keranjang, Menu HP) -->
             <div class="header-actions">
                 <a href="#search" class="icon-btn" aria-label="Cari Produk">🔍</a>
                 <a href="#cart" class="icon-btn" aria-label="Keranjang Belanja">
@@ -289,11 +792,10 @@
                 </a>
                 <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
             </div>
-
         </div>
     </header>
 
-    <!-- ============ KONTEN TAMBAHAN (PREVIEW) ============ -->
+    <!-- ==================== HERO SECTION ==================== -->
     <main>
         <section class="hero" id="home">
             <div class="hero-content">
@@ -302,26 +804,301 @@
                 <a href="#products" class="btn-primary">Lihat Koleksi</a>
             </div>
         </section>
+
+        <!-- ==================== KEUNGGULAN ==================== -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mengapa Memilih <span>PUSAKA AROMA?</span></h2>
+                    <p>Keunggulan yang membuat wewangian kami berbeda dan istimewa</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⏳</div>
+                        <h3>Tahan Hingga 24 Jam</h3>
+                        <p>Formula premium dengan konsentrasi tinggi, memastikan wewangian tetap menempel sepanjang hari.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3>Bahan Alami Pilihan</h3>
+                        <p>Menggunakan ekstrak rempah Nusantara dan essential oil berkualitas internasional.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3>Halal & BPOM</h3>
+                        <p>Telah tersertifikasi halal dan terdaftar resmi di BPOM, aman untuk penggunaan sehari-hari.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3>Packaging Eksklusif</h3>
+                        <p>Dikemas dalam botol mewah, cocok untuk koleksi pribadi maupun hadiah istimewa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PRODUK ==================== -->
+        <section class="products" id="products">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Koleksi <span>Parfum Unggulan</span></h2>
+                    <p>Temukan wewangian signature yang mencerminkan kepribadian Anda</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Parfum 1">
+                            <span class="badge">Best Seller</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Pusaka Nusantara</h3>
+                            <p class="scent-notes">Rempah • Kayu Cendana • Vanilla</p>
+                            <div class="product-footer">
+                                <span class="price">Rp 350.000</span>
+                                <button class="btn-add-cart">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400" alt="Parfum 2">
+                        </div>
+                        <div class="product-info">
+                            <h3>Warisan Raja</h3>
+                            <p class="scent-notes">Oud • Amber • Musk</p>
+                            <div class="product-footer">
+                                <span class="price">Rp 450.000</span>
+                                <button class="btn-add-cart">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=400" alt="Parfum 3">
+                            <span class="badge new">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Melati Semilir</h3>
+                            <p class="scent-notes">Melati • White Tea • Citrus</p>
+                            <div class="product-footer">
+                                <span class="price">Rp 320.000</span>
+                                <button class="btn-add-cart">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400" alt="Parfum 4">
+                        </div>
+                        <div class="product-info">
+                            <h3>Samudra Biru</h3>
+                            <p class="scent-notes">Ocean • Bergamot • Cedar</p>
+                            <div class="product-footer">
+                                <span class="price">Rp 380.000</span>
+                                <button class="btn-add-cart">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-btn">
+                    <a href="#" class="btn-outline">Lihat Semua Koleksi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TENTANG KAMI ==================== -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-wrapper">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=600" alt="Tentang PUSAKA AROMA">
+                    </div>
+                    <div class="about-content">
+                        <h2>Warisan <span>Wewangian Nusantara</span></h2>
+                        <p>PUSAKA AROMA lahir dari kecintaan terhadap kekayaan rempah Indonesia. Kami percaya bahwa setiap tetes parfum adalah cerita—tentang tanah air, tradisi, dan keanggunan yang tak lekang oleh waktu.</p>
+                        <p>Dengan perpaduan teknik modern dan kearifan lokal, kami menghadirkan wewangian yang tidak hanya mengharumkan, tetapi juga meninggalkan kesan mendalam bagi siapa pun yang menciumnya.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h3>50+</h3>
+                                <p>Varian Parfum</p>
+                            </div>
+                            <div class="stat">
+                                <h3>10K+</h3>
+                                <p>Pelanggan Puas</p>
+                            </div>
+                            <div class="stat">
+                                <h3>5 Thn</h3>
+                                <p>Pengalaman</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONI ==================== -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Apa Kata <span>Mereka?</span></h2>
+                    <p>Testimoni dari pelanggan setia PUSAKA AROMA</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Wangi Pusaka Nusantara luar biasa! Tahan seharian dan banyak yang tanya pakai parfum apa. Pokoknya worth it banget!"</p>
+                        <div class="testimonial-author">
+                            <strong>Rina Safitri</strong>
+                            <span>Jakarta</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Packaging-nya mewah, cocok buat kado. Wangi Warisan Raja elegan banget, bikin percaya diri naik."</p>
+                        <div class="testimonial-author">
+                            <strong>Budi Hartono</strong>
+                            <span>Surabaya</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Suka banget sama Melati Semilir! Wanginya segar tapi tetap feminim. Pasti bakal repeat order!"</p>
+                        <div class="testimonial-author">
+                            <strong>Dewi Anggraini</strong>
+                            <span>Bandung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== KONTAK ==================== -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2>Hubungi <span>Kami</span></h2>
+                        <p>Ada pertanyaan atau ingin order langsung? Tim kami siap membantu Anda!</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span>📍</span>
+                                <p>Jl. Raya Utama No. 123, Banyuwangi, Jawa Timur</p>
+                            </div>
+                            <div class="contact-item">
+                                <span>📞</span>
+                                <p>+62 812-3456-7890</p>
+                            </div>
+                            <div class="contact-item">
+                                <span>✉️</span>
+                                <p>info@pusakaaroma.id</p>
+                            </div>
+                            <div class="contact-item">
+                                <span>⏰</span>
+                                <p>Senin - Sabtu: 08.00 - 20.00 WIB</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram">📷</a>
+                            <a href="#" aria-label="TikTok">🎵</a>
+                            <a href="#" aria-label="Facebook">📘</a>
+                            <a href="#" aria-label="WhatsApp">💬</a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Kirim Pesan</h3>
+                        <form>
+                            <input type="text" placeholder="Nama Lengkap" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="tel" placeholder="Nomor WhatsApp">
+                            <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
+                            <button type="submit" class="btn-primary">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- ============ JAVASCRIPT ============ -->
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://i.ibb.co.com/Kcq4MS3s/pusaka-parfum.png" alt="PUSAKA AROMA" class="footer-logo">
+                    <p>Wewangian premium warisan Nusantara yang menghadirkan keanggunan dan kepercayaan diri.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="#">Cara Pemesanan</a></li>
+                        <li><a href="#">Pengiriman</a></li>
+                        <li><a href="#">Pengembalian</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Dapatkan info promo & produk terbaru langsung di email Anda.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Anda">
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PUSAKA AROMA. All rights reserved.</p>
+                <p>Made with ❤️ in Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== WHATSAPP FLOATING ==================== -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="Chat WhatsApp">
+        💬
+    </a>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script>
-        // Fitur untuk membuka/menutup menu pada tampilan HP (Mobile)
+        // Menu Toggle untuk Mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('.main-nav');
 
         menuToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // Ganti ikon hamburger (☰) menjadi silang (✕) saat menu dibuka
             menuToggle.innerHTML = mainNav.classList.contains('active') ? '✕' : '☰';
         });
 
-        // Tutup otomatis menu saat salah satu link diklik (pengalaman mobile yang lebih baik)
+        // Tutup menu saat link diklik
         const navLinks = document.querySelectorAll('.main-nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mainNav.classList.remove('active');
                 menuToggle.innerHTML = '☰';
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
